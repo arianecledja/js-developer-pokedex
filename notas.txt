@@ -1,0 +1,75 @@
+
+
+Requisição HTTP
+
+URL
+endereço do recurso que queremos
+
+URL:  https://pokeapi.co/api/v2/pokemon
+      $(Endereço/IP)/$(path = caminho de identificação do recurso)
+
+IP: https://pokeapi.co   o dns converte p o ip
+    https://127.0.0.1:3000
+
+Path - identificador do recurso: /api/v2/pokemon
+
+Tipo de solicitação: GET | POST | PUT | DELETE | FETCH ,etc
+    Diz o que queremos fazer 
+    Ao digitar no browser sempre é um GET
+
+    GET = buscar esse recurso
+    POST = inserir um novo
+    PUT = atualizar um pokemon https://pokeapi.co/api/v2/pokemon/1
+    DELETE = deletar um pokemon https://pokeapi.co/api/v2/pokemon/1 (id)
+
+
+Passagem de parâmettro para a pi:
+    path           ...pokemon/1       usando o id
+    querie string  ...pokemon?type=grass&name=i
+                   ...pokemon?offset=20&limit=20
+
+Request Headers:  -configuração
+    Aceito/Accept:: (dizendo ao servidor o que aceito como resposta)
+        text/html,
+        application/xhtml+xml,
+        application/xml;q=0.9,  aceito xml com prioridade 9
+        image/avif,             aceito imagem
+        image/webp,
+        image/apng,
+        */*;q=0.8,              aceito qualquer coisa
+        application/signed-exchange;v=b3;q=0.7
+
+    Accept-Language: pt-BR,       prioridade máxima( q=1 )
+                     pt;q=0.9,    q = prioridade
+                     en-US;q=0.8,
+                     en;q=0.7
+
+    Authorization: basic, bearer
+
+
+Response Headers  -configuração
+
+BODY
+{
+    "name": "Teste"
+}
+
+Requisição: URL, Request method, Request headers e Request body.
+
+Status code: 200
+
+Resposta: Status code, response headers e response body.
+
+Interface de uma promise é baseada em um bloco try/catch:
+    fetch(url)
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.error(error);
+        })
+        .finally(function() {
+            console.log('Requisição concluida!');
+        })
+
+

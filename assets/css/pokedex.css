@@ -127,6 +127,13 @@
     height: 70px;
 }
 
+.pokemon .btn {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.9);
+    color: white;
+    cursor: pointer;
+}
+
 .pagination {
     display: flex;
     flex-direction: row;
